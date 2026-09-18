@@ -1,0 +1,2541 @@
+{
+  "version": 1,
+  "destinations": {
+    "NYC": {
+      "label": "NYC",
+      "kind": "city",
+      "coords": [
+        -74.006,
+        40.7128
+      ]
+    },
+    "Netherlands": {
+      "label": "Netherlands",
+      "kind": "country",
+      "coords": [
+        5.3,
+        52.2
+      ]
+    },
+    "Italy": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "Greece": {
+      "label": "Greece",
+      "kind": "country",
+      "coords": [
+        22,
+        39
+      ]
+    },
+    "Japan": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "Georgia": {
+      "label": "Georgia",
+      "kind": "country",
+      "coords": [
+        43.5,
+        42
+      ]
+    },
+    "Malaysia": {
+      "label": "Malaysia",
+      "kind": "country",
+      "coords": [
+        102,
+        4
+      ]
+    },
+    "Vietnam": {
+      "label": "Vietnam",
+      "kind": "country",
+      "coords": [
+        108,
+        16
+      ]
+    },
+    "Taiwan": {
+      "label": "Taiwan",
+      "kind": "country",
+      "coords": [
+        121,
+        24
+      ]
+    },
+    "UK": {
+      "label": "United Kingdom",
+      "kind": "country",
+      "coords": [
+        -2,
+        54
+      ]
+    },
+    "New Zealand": {
+      "label": "New Zealand",
+      "kind": "country",
+      "coords": [
+        174,
+        -41
+      ]
+    },
+    "Switzerland": {
+      "label": "Switzerland",
+      "kind": "country",
+      "coords": [
+        8.2,
+        46.8
+      ]
+    },
+    "france": {
+      "label": "France",
+      "kind": "country",
+      "coords": [
+        2,
+        46
+      ]
+    },
+    "usa": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "canada": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "Egypt": {
+      "label": "Egypt",
+      "kind": "country",
+      "coords": [
+        30,
+        27
+      ]
+    },
+    "Singapore": {
+      "label": "Singapore",
+      "kind": "city",
+      "coords": [
+        103.8198,
+        1.3521
+      ]
+    },
+    "Hongkong": {
+      "label": "Hongkong",
+      "kind": "city",
+      "coords": [
+        114.1694,
+        22.3193
+      ]
+    },
+    "France": {
+      "label": "France",
+      "kind": "country",
+      "coords": [
+        2,
+        46
+      ]
+    },
+    "Canada": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "USA": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "China": {
+      "label": "China",
+      "kind": "country",
+      "coords": [
+        103,
+        35
+      ]
+    },
+    "Dubai": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Switzerland.": {
+      "label": "Switzerland",
+      "kind": "country",
+      "coords": [
+        8.2,
+        46.8
+      ]
+    },
+    "Japan.": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "Thailand": {
+      "label": "Thailand",
+      "kind": "country",
+      "coords": [
+        101,
+        15
+      ]
+    },
+    "London": {
+      "label": "London",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "Dubai/Abudhabi": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "japan": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "china": {
+      "label": "China",
+      "kind": "country",
+      "coords": [
+        103,
+        35
+      ]
+    },
+    "taiwan": {
+      "label": "Taiwan",
+      "kind": "country",
+      "coords": [
+        121,
+        24
+      ]
+    },
+    "switzerland": {
+      "label": "Switzerland",
+      "kind": "country",
+      "coords": [
+        8.2,
+        46.8
+      ]
+    },
+    "austria": {
+      "label": "Austria",
+      "kind": "country",
+      "coords": [
+        14.55,
+        47.52
+      ]
+    },
+    "Cyprus": {
+      "label": "Cyprus",
+      "kind": "country",
+      "coords": [
+        33,
+        35
+      ]
+    },
+    "Mauritius": {
+      "label": "Mauritius",
+      "kind": "city",
+      "coords": [
+        57.5012,
+        -20.3484
+      ]
+    },
+    "Usa": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "Italia": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "Korean": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "Paris": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "Kyoto": {
+      "label": "Kyoto",
+      "kind": "city",
+      "coords": [
+        135.7681,
+        35.0116
+      ]
+    },
+    "turkey": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "تركيا": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "Italie": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "Usa germany canada": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "Turkey": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "Belgium": {
+      "label": "Belgium",
+      "kind": "country",
+      "coords": [
+        4.5,
+        50.8
+      ]
+    },
+    "Rome": {
+      "label": "Rome",
+      "kind": "city",
+      "coords": [
+        12.4964,
+        41.9028
+      ]
+    },
+    "Shanghai": {
+      "label": "Shanghai",
+      "kind": "city",
+      "coords": [
+        121.4737,
+        31.2304
+      ]
+    },
+    "Korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "Indonesia": {
+      "label": "Indonesia",
+      "kind": "country",
+      "coords": [
+        118,
+        -2
+      ]
+    },
+    "日本": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "Portugal": {
+      "label": "Portugal",
+      "kind": "country",
+      "coords": [
+        -8.22,
+        39.4
+      ]
+    },
+    "Tokyo": {
+      "label": "Tokyo",
+      "kind": "city",
+      "coords": [
+        139.6917,
+        35.6895
+      ]
+    },
+    "paris": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "Spain": {
+      "label": "Spain",
+      "kind": "country",
+      "coords": [
+        -3.5,
+        40
+      ]
+    },
+    "GREECE": {
+      "label": "Greece",
+      "kind": "country",
+      "coords": [
+        22,
+        39
+      ]
+    },
+    "Paris Dubai": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "Qatar": {
+      "label": "Qatar",
+      "kind": "country",
+      "coords": [
+        51.2,
+        25.3
+      ]
+    },
+    "Türkiye": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "Oman": {
+      "label": "Oman",
+      "kind": "country",
+      "coords": [
+        57,
+        21
+      ]
+    },
+    "australia": {
+      "label": "Australia",
+      "kind": "country",
+      "coords": [
+        134,
+        -25
+      ]
+    },
+    "Athens": {
+      "label": "Athens",
+      "kind": "city",
+      "coords": [
+        23.7275,
+        37.9838
+      ]
+    },
+    "Espagne": {
+      "label": "Spain",
+      "kind": "country",
+      "coords": [
+        -3.5,
+        40
+      ]
+    },
+    "England": {
+      "label": "United Kingdom",
+      "kind": "country",
+      "coords": [
+        -2,
+        54
+      ]
+    },
+    "United States of America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "South korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "New York City": {
+      "label": "New York",
+      "kind": "city",
+      "coords": [
+        -74.006,
+        40.7128
+      ]
+    },
+    "UAE": {
+      "label": "United Arab Emirates",
+      "kind": "country",
+      "coords": [
+        54,
+        24
+      ]
+    },
+    "Denmark": {
+      "label": "Denmark",
+      "kind": "country",
+      "coords": [
+        9.5,
+        56
+      ]
+    },
+    "spain": {
+      "label": "Spain",
+      "kind": "country",
+      "coords": [
+        -3.5,
+        40
+      ]
+    },
+    "Australia": {
+      "label": "Australia",
+      "kind": "country",
+      "coords": [
+        134,
+        -25
+      ]
+    },
+    "Hong kong": {
+      "label": "Hong Kong",
+      "kind": "city",
+      "coords": [
+        114.1694,
+        22.3193
+      ]
+    },
+    "Mexico": {
+      "label": "Mexico",
+      "kind": "country",
+      "coords": [
+        -102,
+        23
+      ]
+    },
+    "Uk": {
+      "label": "United Kingdom",
+      "kind": "country",
+      "coords": [
+        -2,
+        54
+      ]
+    },
+    "United States": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "tokyo": {
+      "label": "Tokyo",
+      "kind": "city",
+      "coords": [
+        139.6917,
+        35.6895
+      ]
+    },
+    "dubai": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Maldives": {
+      "label": "Maldives",
+      "kind": "country",
+      "coords": [
+        73.5,
+        3.2
+      ]
+    },
+    "DUBAI": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "OSAKA": {
+      "label": "Osaka",
+      "kind": "city",
+      "coords": [
+        135.5023,
+        34.6937
+      ]
+    },
+    "Seoul": {
+      "label": "Seoul",
+      "kind": "city",
+      "coords": [
+        126.978,
+        37.5665
+      ]
+    },
+    "Taipei": {
+      "label": "Taipei",
+      "kind": "city",
+      "coords": [
+        121.5654,
+        25.033
+      ]
+    },
+    "Zanzibar": {
+      "label": "Zanzibar",
+      "kind": "city",
+      "coords": [
+        39.2083,
+        -6.1659
+      ]
+    },
+    "Riyadh": {
+      "label": "Riyadh",
+      "kind": "city",
+      "coords": [
+        46.6753,
+        24.7136
+      ]
+    },
+    "Sao Paulo Brazil want to enjoy being in the tropics of Brazil with my family": {
+      "label": "Brazil",
+      "kind": "country",
+      "coords": [
+        -51,
+        -10
+      ]
+    },
+    "South Korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "California": {
+      "label": "California",
+      "kind": "city",
+      "coords": [
+        -119.4179,
+        36.7783
+      ]
+    },
+    "Scotland": {
+      "label": "United Kingdom",
+      "kind": "country",
+      "coords": [
+        -2,
+        54
+      ]
+    },
+    "Kenya": {
+      "label": "Kenya",
+      "kind": "country",
+      "coords": [
+        37,
+        -0.2
+      ]
+    },
+    "Doha, Qatar": {
+      "label": "Doha",
+      "kind": "city",
+      "coords": [
+        51.531,
+        25.2854
+      ]
+    },
+    "Bali": {
+      "label": "Bali",
+      "kind": "city",
+      "coords": [
+        115.1889,
+        -8.4095
+      ]
+    },
+    "Hawaii": {
+      "label": "Hawaii",
+      "kind": "city",
+      "coords": [
+        -155.5828,
+        19.8968
+      ]
+    },
+    "portugal": {
+      "label": "Portugal",
+      "kind": "country",
+      "coords": [
+        -8.22,
+        39.4
+      ]
+    },
+    ". Mexico": {
+      "label": "Mexico",
+      "kind": "country",
+      "coords": [
+        -102,
+        23
+      ]
+    },
+    "Dominican Republic": {
+      "label": "Dominican Republic",
+      "kind": "country",
+      "coords": [
+        -70.2,
+        18.8
+      ]
+    },
+    "italia": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "New York": {
+      "label": "New York",
+      "kind": "city",
+      "coords": [
+        -74.006,
+        40.7128
+      ]
+    },
+    "new york": {
+      "label": "New York",
+      "kind": "city",
+      "coords": [
+        -74.006,
+        40.7128
+      ]
+    },
+    "Turkey and Greece": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "PARIS": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "LONDRES": {
+      "label": "Londres",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "DUBAIL": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Dubai (UAE),": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Egypte": {
+      "label": "Egypt",
+      "kind": "country",
+      "coords": [
+        30,
+        27
+      ]
+    },
+    "America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "United states": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "Canda and maybe china": {
+      "label": "China",
+      "kind": "country",
+      "coords": [
+        103,
+        35
+      ]
+    },
+    "Budapest": {
+      "label": "Budapest",
+      "kind": "city",
+      "coords": [
+        19.0402,
+        47.4979
+      ]
+    },
+    "greece": {
+      "label": "Greece",
+      "kind": "country",
+      "coords": [
+        22,
+        39
+      ]
+    },
+    "italy": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "Australia for business and study": {
+      "label": "Australia",
+      "kind": "country",
+      "coords": [
+        134,
+        -25
+      ]
+    },
+    "Istanbul": {
+      "label": "Istanbul",
+      "kind": "city",
+      "coords": [
+        28.9784,
+        41.0082
+      ]
+    },
+    "hawaii": {
+      "label": "Hawaii",
+      "kind": "city",
+      "coords": [
+        -155.5828,
+        19.8968
+      ]
+    },
+    "Sri Lanka": {
+      "label": "Sri Lanka",
+      "kind": "country",
+      "coords": [
+        80.7,
+        7.8
+      ]
+    },
+    "denmark": {
+      "label": "Denmark",
+      "kind": "country",
+      "coords": [
+        9.5,
+        56
+      ]
+    },
+    "Brazil": {
+      "label": "Brazil",
+      "kind": "country",
+      "coords": [
+        -51,
+        -10
+      ]
+    },
+    "Philippines": {
+      "label": "Philippines",
+      "kind": "country",
+      "coords": [
+        122,
+        12
+      ]
+    },
+    "Chennai": {
+      "label": "Chennai",
+      "kind": "city",
+      "coords": [
+        80.2707,
+        13.0827
+      ]
+    },
+    "Go to Japan, may be Kyushu or Shikoku.": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "France (e.g., Paris)": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "Italy(e.g.Barcelona), (e.g., Rome / Florence)Sp": {
+      "label": "Rome",
+      "kind": "city",
+      "coords": [
+        12.4964,
+        41.9028
+      ]
+    },
+    "england": {
+      "label": "United Kingdom",
+      "kind": "country",
+      "coords": [
+        -2,
+        54
+      ]
+    },
+    "Hong Kong": {
+      "label": "Hong Kong",
+      "kind": "city",
+      "coords": [
+        114.1694,
+        22.3193
+      ]
+    },
+    "thailand": {
+      "label": "Thailand",
+      "kind": "country",
+      "coords": [
+        101,
+        15
+      ]
+    },
+    "south korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "thailand,austrelia,": {
+      "label": "Thailand",
+      "kind": "country",
+      "coords": [
+        101,
+        15
+      ]
+    },
+    "malaysia": {
+      "label": "Malaysia",
+      "kind": "country",
+      "coords": [
+        102,
+        4
+      ]
+    },
+    "Austria": {
+      "label": "Austria",
+      "kind": "country",
+      "coords": [
+        14.55,
+        47.52
+      ]
+    },
+    "Los Angeles": {
+      "label": "Los Angeles",
+      "kind": "city",
+      "coords": [
+        -118.2437,
+        34.0522
+      ]
+    },
+    "Phuket (Tailandia)": {
+      "label": "Phuket",
+      "kind": "city",
+      "coords": [
+        98.3923,
+        7.8804
+      ]
+    },
+    "Bali (Indonesia)": {
+      "label": "Bali",
+      "kind": "city",
+      "coords": [
+        115.1889,
+        -8.4095
+      ]
+    },
+    "India": {
+      "label": "India",
+      "kind": "country",
+      "coords": [
+        79,
+        22
+      ]
+    },
+    "THAILAND": {
+      "label": "Thailand",
+      "kind": "country",
+      "coords": [
+        101,
+        15
+      ]
+    },
+    "Kuala Lumpur": {
+      "label": "Kuala Lumpur",
+      "kind": "city",
+      "coords": [
+        101.6869,
+        3.139
+      ]
+    },
+    "Poland": {
+      "label": "Poland",
+      "kind": "country",
+      "coords": [
+        19,
+        52
+      ]
+    },
+    "Ireland": {
+      "label": "Ireland",
+      "kind": "country",
+      "coords": [
+        -8,
+        53
+      ]
+    },
+    "Maldive e Sri Lanka": {
+      "label": "Sri Lanka",
+      "kind": "country",
+      "coords": [
+        80.7,
+        7.8
+      ]
+    },
+    "morocco": {
+      "label": "Morocco",
+      "kind": "country",
+      "coords": [
+        -6,
+        32
+      ]
+    },
+    "south africa": {
+      "label": "South Africa",
+      "kind": "country",
+      "coords": [
+        24,
+        -29
+      ]
+    },
+    "S.Korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "Turkey. Morocco. Qatar. Saudi Arabia": {
+      "label": "Morocco",
+      "kind": "country",
+      "coords": [
+        -6,
+        32
+      ]
+    },
+    "rome": {
+      "label": "Rome",
+      "kind": "city",
+      "coords": [
+        12.4964,
+        41.9028
+      ]
+    },
+    "egypt": {
+      "label": "Egypt",
+      "kind": "country",
+      "coords": [
+        30,
+        27
+      ]
+    },
+    "Moroccoa": {
+      "label": "Morocco",
+      "kind": "country",
+      "coords": [
+        -6,
+        32
+      ]
+    },
+    "New york": {
+      "label": "New York",
+      "kind": "city",
+      "coords": [
+        -74.006,
+        40.7128
+      ]
+    },
+    "Nice , France": {
+      "label": "France",
+      "kind": "country",
+      "coords": [
+        2,
+        46
+      ]
+    },
+    "American": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "South America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "CHINA": {
+      "label": "China",
+      "kind": "country",
+      "coords": [
+        103,
+        35
+      ]
+    },
+    "TAIWAN": {
+      "label": "Taiwan",
+      "kind": "country",
+      "coords": [
+        121,
+        24
+      ]
+    },
+    "korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "Bangkok": {
+      "label": "Bangkok",
+      "kind": "city",
+      "coords": [
+        100.5018,
+        13.7563
+      ]
+    },
+    "South Africa": {
+      "label": "South Africa",
+      "kind": "country",
+      "coords": [
+        24,
+        -29
+      ]
+    },
+    "Phuket": {
+      "label": "Phuket",
+      "kind": "city",
+      "coords": [
+        98.3923,
+        7.8804
+      ]
+    },
+    "South African": {
+      "label": "South Africa",
+      "kind": "country",
+      "coords": [
+        24,
+        -29
+      ]
+    },
+    "United state of America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "vietnam": {
+      "label": "Vietnam",
+      "kind": "country",
+      "coords": [
+        108,
+        16
+      ]
+    },
+    "Northern Ireland": {
+      "label": "Ireland",
+      "kind": "country",
+      "coords": [
+        -8,
+        53
+      ]
+    },
+    "United Arab Emirates (Dubai)": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Saudi Arabia (Riyadh)": {
+      "label": "Riyadh",
+      "kind": "city",
+      "coords": [
+        46.6753,
+        24.7136
+      ]
+    },
+    "Turkey (Istanbul)": {
+      "label": "Istanbul",
+      "kind": "city",
+      "coords": [
+        28.9784,
+        41.0082
+      ]
+    },
+    "Dubai, United Arab Emirates (UAE)": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Kuala lumpur": {
+      "label": "Kuala Lumpur",
+      "kind": "city",
+      "coords": [
+        101.6869,
+        3.139
+      ]
+    },
+    "Morocco": {
+      "label": "Morocco",
+      "kind": "country",
+      "coords": [
+        -6,
+        32
+      ]
+    },
+    "ireland": {
+      "label": "Ireland",
+      "kind": "country",
+      "coords": [
+        -8,
+        53
+      ]
+    },
+    "Travel to Bahrain for Business and final destination will be Dubai": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Sri lanka": {
+      "label": "Sri Lanka",
+      "kind": "country",
+      "coords": [
+        80.7,
+        7.8
+      ]
+    },
+    "Philippines,": {
+      "label": "Philippines",
+      "kind": "country",
+      "coords": [
+        122,
+        12
+      ]
+    },
+    "SOUTH AFRICA": {
+      "label": "South Africa",
+      "kind": "country",
+      "coords": [
+        24,
+        -29
+      ]
+    },
+    "MALDIVES": {
+      "label": "Maldives",
+      "kind": "country",
+      "coords": [
+        73.5,
+        3.2
+      ]
+    },
+    "ZANZIBAR": {
+      "label": "Zanzibar",
+      "kind": "city",
+      "coords": [
+        39.2083,
+        -6.1659
+      ]
+    },
+    "United States Of America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "london": {
+      "label": "London",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "The Philippines": {
+      "label": "Philippines",
+      "kind": "country",
+      "coords": [
+        122,
+        12
+      ]
+    },
+    "Amsterdam": {
+      "label": "Amsterdam",
+      "kind": "city",
+      "coords": [
+        4.9041,
+        52.3676
+      ]
+    },
+    "Beijing": {
+      "label": "Beijing",
+      "kind": "city",
+      "coords": [
+        116.4074,
+        39.9042
+      ]
+    },
+    "CANADA": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "Johannesburg": {
+      "label": "Johannesburg",
+      "kind": "city",
+      "coords": [
+        28.0473,
+        -26.2041
+      ]
+    },
+    "Italy, spain": {
+      "label": "Spain",
+      "kind": "country",
+      "coords": [
+        -3.5,
+        40
+      ]
+    },
+    "Hanoi": {
+      "label": "Hanoi",
+      "kind": "city",
+      "coords": [
+        105.8342,
+        21.0278
+      ]
+    },
+    "Usa canada europa": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "Abudhabi, Switzerland and Romania": {
+      "label": "Switzerland",
+      "kind": "country",
+      "coords": [
+        8.2,
+        46.8
+      ]
+    },
+    "south Korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "indonesia": {
+      "label": "Indonesia",
+      "kind": "country",
+      "coords": [
+        118,
+        -2
+      ]
+    },
+    "New zealand": {
+      "label": "New Zealand",
+      "kind": "country",
+      "coords": [
+        174,
+        -41
+      ]
+    },
+    "JAPAN": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "singapore": {
+      "label": "Singapore",
+      "kind": "city",
+      "coords": [
+        103.8198,
+        1.3521
+      ]
+    },
+    "ITALY": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "Atlanta, georgia": {
+      "label": "Georgia",
+      "kind": "country",
+      "coords": [
+        43.5,
+        42
+      ]
+    },
+    "London United Kingdom": {
+      "label": "London",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "Nairobi Kenya": {
+      "label": "Nairobi",
+      "kind": "city",
+      "coords": [
+        36.8219,
+        -1.2921
+      ]
+    },
+    "madrid": {
+      "label": "Madrid",
+      "kind": "city",
+      "coords": [
+        -3.7038,
+        40.4168
+      ]
+    },
+    "athens": {
+      "label": "Athens",
+      "kind": "city",
+      "coords": [
+        23.7275,
+        37.9838
+      ]
+    },
+    "Romanya": {
+      "label": "Oman",
+      "kind": "country",
+      "coords": [
+        57,
+        21
+      ]
+    },
+    "Sydney": {
+      "label": "Sydney",
+      "kind": "city",
+      "coords": [
+        151.2093,
+        -33.8688
+      ]
+    },
+    "Auckland": {
+      "label": "Auckland",
+      "kind": "city",
+      "coords": [
+        174.7633,
+        -36.8485
+      ]
+    },
+    "Osaka Jepang": {
+      "label": "Osaka",
+      "kind": "city",
+      "coords": [
+        135.5023,
+        34.6937
+      ]
+    },
+    "Macedonia, north cyrpus, cruise to asia, france or italy": {
+      "label": "France",
+      "kind": "country",
+      "coords": [
+        2,
+        46
+      ]
+    },
+    "The United States": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "Londres": {
+      "label": "Londres",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "Dijon France": {
+      "label": "France",
+      "kind": "country",
+      "coords": [
+        2,
+        46
+      ]
+    },
+    "Korea selatan": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "united states": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "Marmaris": {
+      "label": "Marmaris",
+      "kind": "city",
+      "coords": [
+        28.2744,
+        36.855
+      ]
+    },
+    "Croatia": {
+      "label": "Croatia",
+      "kind": "country",
+      "coords": [
+        15.5,
+        45.1
+      ]
+    },
+    "United Kingdom, Germany, Switzerland": {
+      "label": "Switzerland",
+      "kind": "country",
+      "coords": [
+        8.2,
+        46.8
+      ]
+    },
+    "United Kingdom, France, Spain": {
+      "label": "France",
+      "kind": "country",
+      "coords": [
+        2,
+        46
+      ]
+    },
+    "new zealand": {
+      "label": "New Zealand",
+      "kind": "country",
+      "coords": [
+        174,
+        -41
+      ]
+    },
+    "United Kingdom, Ireland, Netherlands": {
+      "label": "Netherlands",
+      "kind": "country",
+      "coords": [
+        5.3,
+        52.2
+      ]
+    },
+    "North America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "The United States of America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "hongkong": {
+      "label": "Hongkong",
+      "kind": "city",
+      "coords": [
+        114.1694,
+        22.3193
+      ]
+    },
+    "Spain particularly Barcelona": {
+      "label": "Barcelona",
+      "kind": "city",
+      "coords": [
+        2.1734,
+        41.3851
+      ]
+    },
+    "uae": {
+      "label": "United Arab Emirates",
+      "kind": "country",
+      "coords": [
+        54,
+        24
+      ]
+    },
+    "London, United Kingdom": {
+      "label": "London",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "Dubai, United Arab Emirates": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "italie": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "EGYPT": {
+      "label": "Egypt",
+      "kind": "country",
+      "coords": [
+        30,
+        27
+      ]
+    },
+    "Paris France": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "The Republic of India": {
+      "label": "India",
+      "kind": "country",
+      "coords": [
+        79,
+        22
+      ]
+    },
+    "india": {
+      "label": "India",
+      "kind": "country",
+      "coords": [
+        79,
+        22
+      ]
+    },
+    "Faro, Portugal": {
+      "label": "Portugal",
+      "kind": "country",
+      "coords": [
+        -8.22,
+        39.4
+      ]
+    },
+    "Madrid": {
+      "label": "Madrid",
+      "kind": "city",
+      "coords": [
+        -3.7038,
+        40.4168
+      ]
+    },
+    "New York, Paris, London.": {
+      "label": "New York",
+      "kind": "city",
+      "coords": [
+        -74.006,
+        40.7128
+      ]
+    },
+    "VIETNAM": {
+      "label": "Vietnam",
+      "kind": "country",
+      "coords": [
+        108,
+        16
+      ]
+    },
+    "SOUTH KOREA": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "marrakech": {
+      "label": "Marrakech",
+      "kind": "city",
+      "coords": [
+        -8.0083,
+        31.6295
+      ]
+    },
+    "Doha": {
+      "label": "Doha",
+      "kind": "city",
+      "coords": [
+        51.531,
+        25.2854
+      ]
+    },
+    "lisbona": {
+      "label": "Lisbon",
+      "kind": "city",
+      "coords": [
+        -9.1393,
+        38.7223
+      ]
+    },
+    "ROME": {
+      "label": "Rome",
+      "kind": "city",
+      "coords": [
+        12.4964,
+        41.9028
+      ]
+    },
+    "USA,uk, UAE Singapore France Italy": {
+      "label": "Singapore",
+      "kind": "city",
+      "coords": [
+        103.8198,
+        1.3521
+      ]
+    },
+    "Goa": {
+      "label": "Goa",
+      "kind": "city",
+      "coords": [
+        74.124,
+        15.2993
+      ]
+    },
+    "Delhi": {
+      "label": "Delhi",
+      "kind": "city",
+      "coords": [
+        77.1025,
+        28.7041
+      ]
+    },
+    "South‑Korea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "Canada, usa, uk, africa, china": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "I want to visit Japan again especially Tokyo disneyland and Universal Studios in Osaka": {
+      "label": "Tokyo",
+      "kind": "city",
+      "coords": [
+        139.6917,
+        35.6895
+      ]
+    },
+    "Uae": {
+      "label": "United Arab Emirates",
+      "kind": "country",
+      "coords": [
+        54,
+        24
+      ]
+    },
+    "CALIFORNIA": {
+      "label": "California",
+      "kind": "city",
+      "coords": [
+        -119.4179,
+        36.7783
+      ]
+    },
+    "AUSTRALIA": {
+      "label": "Australia",
+      "kind": "country",
+      "coords": [
+        134,
+        -25
+      ]
+    },
+    "Bali Indonesia": {
+      "label": "Bali",
+      "kind": "city",
+      "coords": [
+        115.1889,
+        -8.4095
+      ]
+    },
+    "Tokyo Japan": {
+      "label": "Tokyo",
+      "kind": "city",
+      "coords": [
+        139.6917,
+        35.6895
+      ]
+    },
+    "Istanbul Turkey": {
+      "label": "Istanbul",
+      "kind": "city",
+      "coords": [
+        28.9784,
+        41.0082
+      ]
+    },
+    "Bangkok, Thailand": {
+      "label": "Bangkok",
+      "kind": "city",
+      "coords": [
+        100.5018,
+        13.7563
+      ]
+    },
+    "scotland": {
+      "label": "United Kingdom",
+      "kind": "country",
+      "coords": [
+        -2,
+        54
+      ]
+    },
+    "Vienna": {
+      "label": "Vienna",
+      "kind": "city",
+      "coords": [
+        16.3738,
+        48.2082
+      ]
+    },
+    "Italien": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "Frankreich": {
+      "label": "Germany",
+      "kind": "country",
+      "coords": [
+        10,
+        51
+      ]
+    },
+    "I am currently thinking about singapore": {
+      "label": "Singapore",
+      "kind": "city",
+      "coords": [
+        103.8198,
+        1.3521
+      ]
+    },
+    "South africa": {
+      "label": "South Africa",
+      "kind": "country",
+      "coords": [
+        24,
+        -29
+      ]
+    },
+    "United states of America": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "Dubai UAE": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "maldives": {
+      "label": "Maldives",
+      "kind": "country",
+      "coords": [
+        73.5,
+        3.2
+      ]
+    },
+    "southKorea": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "Italy, Morocco and Spain": {
+      "label": "Morocco",
+      "kind": "country",
+      "coords": [
+        -6,
+        32
+      ]
+    },
+    "London, singapore": {
+      "label": "London",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "INDONESIA": {
+      "label": "Indonesia",
+      "kind": "country",
+      "coords": [
+        118,
+        -2
+      ]
+    },
+    "London UK": {
+      "label": "London",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "Japan and": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "philippines": {
+      "label": "Philippines",
+      "kind": "country",
+      "coords": [
+        122,
+        12
+      ]
+    },
+    "BALI": {
+      "label": "Bali",
+      "kind": "city",
+      "coords": [
+        115.1889,
+        -8.4095
+      ]
+    },
+    "Romania": {
+      "label": "Oman",
+      "kind": "country",
+      "coords": [
+        57,
+        21
+      ]
+    },
+    "Dubai (UAE)": {
+      "label": "Dubai",
+      "kind": "city",
+      "coords": [
+        55.2708,
+        25.2048
+      ]
+    },
+    "Canada, singapore, germany": {
+      "label": "Singapore",
+      "kind": "city",
+      "coords": [
+        103.8198,
+        1.3521
+      ]
+    },
+    "brazil": {
+      "label": "Brazil",
+      "kind": "country",
+      "coords": [
+        -51,
+        -10
+      ]
+    },
+    "america": {
+      "label": "United States of America",
+      "kind": "country",
+      "coords": [
+        -100,
+        39
+      ]
+    },
+    "georgia": {
+      "label": "Georgia",
+      "kind": "country",
+      "coords": [
+        43.5,
+        42
+      ]
+    },
+    "Turkey antalya": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "Estony": {
+      "label": "Estonia",
+      "kind": "country",
+      "coords": [
+        25.8,
+        58.6
+      ]
+    },
+    "Disney world japan": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "Zagreb, Croatia": {
+      "label": "Croatia",
+      "kind": "country",
+      "coords": [
+        15.5,
+        45.1
+      ]
+    },
+    "Zaurich, Switzerland": {
+      "label": "Switzerland",
+      "kind": "country",
+      "coords": [
+        8.2,
+        46.8
+      ]
+    },
+    "Antalia, Turkey": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "New Delhi": {
+      "label": "Delhi",
+      "kind": "city",
+      "coords": [
+        77.1025,
+        28.7041
+      ]
+    },
+    "Argentina": {
+      "label": "Argentina",
+      "kind": "country",
+      "coords": [
+        -64,
+        -34
+      ]
+    },
+    "Spain (Costa del Sol)": {
+      "label": "Spain",
+      "kind": "country",
+      "coords": [
+        -3.5,
+        40
+      ]
+    },
+    "Singapore, Vietnam": {
+      "label": "Singapore",
+      "kind": "city",
+      "coords": [
+        103.8198,
+        1.3521
+      ]
+    },
+    "I have considered Thailand": {
+      "label": "Thailand",
+      "kind": "country",
+      "coords": [
+        101,
+        15
+      ]
+    },
+    "Thailand, Malaysia": {
+      "label": "Malaysia",
+      "kind": "country",
+      "coords": [
+        102,
+        4
+      ]
+    },
+    "My international destination was recommended I travel to Canada, united kingdom for a business meetings": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "Sydney Opera House": {
+      "label": "Sydney",
+      "kind": "city",
+      "coords": [
+        151.2093,
+        -33.8688
+      ]
+    },
+    "Korea,": {
+      "label": "South Korea",
+      "kind": "country",
+      "coords": [
+        127.8,
+        36
+      ]
+    },
+    "South of France": {
+      "label": "France",
+      "kind": "country",
+      "coords": [
+        2,
+        46
+      ]
+    },
+    "Japanese": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "japan china": {
+      "label": "Japan",
+      "kind": "country",
+      "coords": [
+        138,
+        37
+      ]
+    },
+    "Brazil,": {
+      "label": "Brazil",
+      "kind": "country",
+      "coords": [
+        -51,
+        -10
+      ]
+    },
+    "CAnada": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "bali": {
+      "label": "Bali",
+      "kind": "city",
+      "coords": [
+        115.1889,
+        -8.4095
+      ]
+    },
+    "OMAN": {
+      "label": "Oman",
+      "kind": "country",
+      "coords": [
+        57,
+        21
+      ]
+    },
+    "Spain, Italy, China, Japan, Maldives, Brazil": {
+      "label": "Maldives",
+      "kind": "country",
+      "coords": [
+        73.5,
+        3.2
+      ]
+    },
+    "Türkei": {
+      "label": "Turkey",
+      "kind": "country",
+      "coords": [
+        35,
+        39
+      ]
+    },
+    "Ich plane, nächstes Jahr nach Italien (Rom und Florenz) zu fahren": {
+      "label": "Italy",
+      "kind": "country",
+      "coords": [
+        12,
+        42
+      ]
+    },
+    "INDIA": {
+      "label": "India",
+      "kind": "country",
+      "coords": [
+        79,
+        22
+      ]
+    },
+    "SWITZERLAND": {
+      "label": "Switzerland",
+      "kind": "country",
+      "coords": [
+        8.2,
+        46.8
+      ]
+    },
+    "mexico": {
+      "label": "Mexico",
+      "kind": "country",
+      "coords": [
+        -102,
+        23
+      ]
+    },
+    "Barcelona": {
+      "label": "Barcelona",
+      "kind": "city",
+      "coords": [
+        2.1734,
+        41.3851
+      ]
+    },
+    "Athens, Greece": {
+      "label": "Athens",
+      "kind": "city",
+      "coords": [
+        23.7275,
+        37.9838
+      ]
+    },
+    "Rome, Italy": {
+      "label": "Rome",
+      "kind": "city",
+      "coords": [
+        12.4964,
+        41.9028
+      ]
+    },
+    "Madrid, Spain": {
+      "label": "Madrid",
+      "kind": "city",
+      "coords": [
+        -3.7038,
+        40.4168
+      ]
+    },
+    "amsterdam": {
+      "label": "Amsterdam",
+      "kind": "city",
+      "coords": [
+        4.9041,
+        52.3676
+      ]
+    },
+    "toronto": {
+      "label": "Toronto",
+      "kind": "city",
+      "coords": [
+        -79.3832,
+        43.6532
+      ]
+    },
+    "mexico city": {
+      "label": "Mexico",
+      "kind": "country",
+      "coords": [
+        -102,
+        23
+      ]
+    },
+    "New Mexico": {
+      "label": "Mexico",
+      "kind": "country",
+      "coords": [
+        -102,
+        23
+      ]
+    },
+    "Canada and japan": {
+      "label": "Canada",
+      "kind": "country",
+      "coords": [
+        -106,
+        57
+      ]
+    },
+    "Paris, France": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "LONDON": {
+      "label": "London",
+      "kind": "city",
+      "coords": [
+        -0.1276,
+        51.5072
+      ]
+    },
+    "Riyadh in kingdom of saudi arabia": {
+      "label": "Riyadh",
+      "kind": "city",
+      "coords": [
+        46.6753,
+        24.7136
+      ]
+    },
+    "Paris in farance": {
+      "label": "Paris",
+      "kind": "city",
+      "coords": [
+        2.3522,
+        48.8566
+      ]
+    },
+    "Canada, Toronto": {
+      "label": "Toronto",
+      "kind": "city",
+      "coords": [
+        -79.3832,
+        43.6532
+      ]
+    },
+    "spagna - valencia": {
+      "label": "Valencia",
+      "kind": "city",
+      "coords": [
+        -0.3763,
+        39.4699
+      ]
+    },
+    "QATAR": {
+      "label": "Qatar",
+      "kind": "country",
+      "coords": [
+        51.2,
+        25.3
+      ]
+    },
+    "espagne": {
+      "label": "Spain",
+      "kind": "country",
+      "coords": [
+        -3.5,
+        40
+      ]
+    },
+    "PORTUGAL": {
+      "label": "Portugal",
+      "kind": "country",
+      "coords": [
+        -8.22,
+        39.4
+      ]
+    },
+    "New York, Germany and Sweden": {
+      "label": "New York",
+      "kind": "city",
+      "coords": [
+        -74.006,
+        40.7128
+      ]
+    },
+    "I wan to travel to a recreational area like the islands, meaning a beach with my friends, wife, and children. I think I will choose the Maldives because I've always wanted to travel there, and it will be my first time.": {
+      "label": "Maldives",
+      "kind": "country",
+      "coords": [
+        73.5,
+        3.2
+      ]
+    },
+    "Sri Lanka Maldives": {
+      "label": "Sri Lanka",
+      "kind": "country",
+      "coords": [
+        80.7,
+        7.8
+      ]
+    },
+    "Nairobi": {
+      "label": "Nairobi",
+      "kind": "city",
+      "coords": [
+        36.8219,
+        -1.2921
+      ]
+    },
+    "HONG KONG": {
+      "label": "Hong Kong",
+      "kind": "city",
+      "coords": [
+        114.1694,
+        22.3193
+      ]
+    }
+  }
+}

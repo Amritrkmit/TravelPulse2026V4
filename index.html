@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Pulse | 2nd Wave Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260916" />
+<script>
+(function () {
+  if (sessionStorage.getItem("travelPulseAuth") !== "1") {
+    window.location.replace("login.html");
+  }
+})();
+</script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">TP</div>
+      <div>
+        <strong>Travel Pulse</strong>
+        <span>Source Market Intelligence</span>
+      </div>
+    </div>
+    <div class="headline">
+      <h1>Travel Intent &amp; Behaviour Intelligence — 2nd Wave 2026</h1>
+      <p>TSI &amp; Travel Intent / QS3, QS4, QS5, QS5a, Q3–Q24 · Executive dashboard · Confidential</p>
+    </div>
+    <div class="sidebar-note">
+      <span>Survey base</span>
+      <strong id="baseN">n = —</strong>
+      <small>Overall sample</small>
+    </div>
+    <button class="logout-btn" id="logoutBtn" type="button" title="Log out">Log out</button>
+  </header>
+
+  <!-- TAB NAV -->
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="overview">Source Overview</button>
+    <button class="tab" data-tab="behaviour">Travel Behaviour</button>
+    <button class="tab" data-tab="airline">Airline POV</button>
+    <button class="tab" data-tab="hotel">Hotel POV</button>
+    <button class="tab" data-tab="market">Market Snapshot</button>
+    <button class="tab" data-tab="destination">Destination POV</button>
+    <button class="tab" data-tab="social">Social Sentiment</button>
+    <button class="tab" data-tab="all">All Survey Questions</button>
+  </nav>
+
+  <!-- FILTER BAR -->
+  <div class="filters-bar" id="filtersBar">
+    <div class="filter-title">Filters</div>
+    <div class="filter-grid" id="filterGrid"></div>
+    <div class="filter-actions">
+      <span class="segment-chip" id="segmentBase"></span>
+      <button class="chip-clear" id="chipClear" type="button" title="Clear active filter" hidden>✕</button>
+      <span class="filter-note" title="Region → Market cascade. Smart multi-select.">Multi-select · Smart cascade ✦</span>
+      <button class="reset-btn" id="resetBtn" type="button">↺ Reset</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         OVERVIEW / SOURCE OVERVIEW
+    ══════════════════════════════════════════ -->
+    <section class="tab-panel" data-panel="overview">
+      <div class="insight-banner">
+        <span class="insight-tag">Insight</span>
+        <span id="overviewInsight"></span>
+      </div>
+
+      <!-- Global map + market focus -->
+      <section class="grid map-row">
+        <article class="card map-card wide">
+          <div class="card-head">
+            <div><span class="section-tag">GLOBAL MARKET · QS0</span><h2 id="overviewMapTitle">Source markets at a glance</h2></div>
+            <span class="mini-note" id="overviewMapNote">Click a market to filter</span>
+          </div>
+          <div id="overviewMap" class="chart global-map"></div>
+        </article>
+        <article class="card map-insight">
+          <div class="card-head">
+            <div><span class="section-tag">MARKET FOCUS</span><h2>Selected market</h2></div>
+          </div>
+          <div id="mapInsight"></div>
+        </article>
+      </section>
+
+      <!-- KPI strip -->
+      <section class="kpi-grid" id="kpis"></section>
+
+      <section class="card sentiment-pulse-card">
+        <div class="card-head">
+          <div><span class="section-tag">SURVEY SENTIMENT · Q15a / Q21a / Q10</span><h2>Travel sentiment pulse</h2></div>
+          <span class="mini-note">Survey-based sentiment · filtered respondent base</span>
+        </div>
+        <div id="sentimentPulseKpis" class="sentiment-pulse-kpis"></div>
+        <div id="sentimentPulseChart" class="chart sentiment-pulse-chart"></div>
+        <p class="sentiment-method-note">Promoters = scores 9–10 · Passives = 7–8 · Detractors = 0–6. This panel uses survey responses only; Brandwatch social sentiment is not included in the supplied data bundle.</p>
+      </section>
+
+      <!-- Traveller type trio -->
+      <section class="grid" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;">
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">QS5a · LEISURE</span><h2>Leisure trips planned</h2></div></div>
+          <div id="ttLeisureKpi" class="chart" style="min-height:90px"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">QS5a · BUSINESS</span><h2>Business trips planned</h2></div></div>
+          <div id="ttBusinessKpi" class="chart" style="min-height:90px"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">QS5a · BLEISURE</span><h2>Bleisure trips planned</h2></div></div>
+          <div id="ttBleisureKpi" class="chart" style="min-height:90px"></div>
+        </article>
+      </section>
+
+      <!-- Planning + purpose -->
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">Q2 · PLANNING STAGE</span><h2>Traveler planning stage</h2></div>
+            <span class="mini-note" id="planningInsight"></span>
+          </div>
+          <div id="planningChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">QS5 · TRIP MIX</span><h2>Main trip purpose</h2></div></div>
+          <div id="purposeChart" class="chart donut-wrap"></div>
+        </article>
+      </section>
+
+      <!-- Timing + spend -->
+      <section class="grid two">
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q6a · TRAVEL TIMING</span><h2>When will they travel?</h2></div></div>
+          <div id="timingChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q10 · SPEND EXPECTATION</span><h2>Expected travel spend change</h2></div></div>
+          <div id="spendChart" class="chart"></div>
+        </article>
+      </section>
+
+      <!-- Destination funnel + word cloud -->
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">Q3 · DESTINATION FUNNEL</span><h2>Where are they going — and how far along?</h2></div>
+            <span class="mini-note">Top 8 destinations · stacked by planning stage</span>
+          </div>
+          <div id="destFunnelChart" class="chart" style="min-height:300px"></div>
+        </article>
+        <article class="card">
+          <div class="card-head">
+            <div><span class="section-tag">Q3 · KEY DESTINATIONS</span><h2>Top destinations considered</h2></div>
+            <span class="mini-note">Word size = frequency</span>
+          </div>
+          <div id="destWordCloud" class="chart" style="min-height:200px"></div>
+        </article>
+      </section>
+
+      <!-- Future activities -->
+      <section class="grid">
+        <article class="card wide">
+          <div class="card-head"><div><span class="section-tag">QS4 · FUTURE PLANS</span><h2>Other travel activities planned in next 12 months</h2></div></div>
+          <div id="futureActivitiesChart" class="chart"></div>
+        </article>
+      </section>
+
+      <!-- Tab question explorer -->
+      <section class="tab-question-section">
+        <div class="tab-question-head">
+          <div><span class="section-tag">QUESTION DETAIL</span><h2>Planning &amp; trip questions</h2><p>Every planning question for this tab is available below.</p></div>
+          <div class="question-jump" id="overviewQuestionJump"></div>
+        </div>
+        <div class="tab-question-grid" id="overviewQuestionGrid"></div>
+      </section>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         TRAVEL BEHAVIOUR
+    ══════════════════════════════════════════ -->
+    <section class="tab-panel" data-panel="behaviour" hidden>
+      <div class="insight-banner">
+        <span class="insight-tag">Insight</span>
+        <span id="behaviourInsight"></span>
+      </div>
+
+      <!-- ── JOURNEY FLOW CHEVRONS (PPT-style full-width) ── -->
+      <div class="journey-wrapper">
+        <div class="journey-flow" id="journeyFlow" aria-label="Customer journey stages">
+          <!-- built by JS -->
+        </div>
+      </div>
+
+      <section class="grid map-row behaviour-map-row">
+        <article class="card map-card wide">
+          <div class="card-head">
+            <div><span class="section-tag">SOURCE MARKET · JOURNEY FLOW</span><h2 id="behaviourMapTitle">Filtered respondents by source market</h2></div>
+            <span class="mini-note">Active filters · click a market to filter</span>
+          </div>
+          <div id="behaviourMap" class="chart global-map"></div>
+        </article>
+        <article class="card map-insight">
+          <div class="card-head"><div><span class="section-tag">JOURNEY MARKET FOCUS</span><h2>Selected market</h2></div></div>
+          <div id="behaviourMapInsight"></div>
+        </article>
+      </section>
+
+      <!-- ── INSPIRE STAGE PANEL ── -->
+      <div class="journey-stage-panel" id="stageInspire">
+        <div class="stage-kpi-row">
+          <div class="stage-kpi"><div class="stage-kpi-label">Q3 · Destinations considered</div><div class="stage-kpi-val" id="skpiDestCount">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q7 · Top info channel</div><div class="stage-kpi-val" id="skpiTopChannel">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q12 · Top experience sought</div><div class="stage-kpi-val" id="skpiTopExp">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q2 · Inspire stage (Q2=2)</div><div class="stage-kpi-val" id="skpiInspirePct">—</div></div>
+        </div>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q3 · KEY DESTINATIONS CONSIDERED</span><h2>Top destinations being considered</h2></div>
+              <span class="mini-note">All destinations · descending · click to filter</span>
+            </div>
+            <div id="inspireDestChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><span class="section-tag">QS5 · MAIN TRIP PURPOSE</span><h2>Main purpose of trip</h2></div></div>
+            <div id="inspirePurposeChart" class="chart donut-wrap"></div>
+          </article>
+        </section>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q7 · DISCOVERY CHANNELS</span><h2>Key channels for collecting information</h2></div>
+              <span class="mini-note">Multi-select · Top 3</span>
+            </div>
+            <div id="infoChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <div><span class="section-tag">Q12 · EXPERIENCES SOUGHT</span><h2>Key experiences sought</h2></div>
+              <span class="mini-note">Top 3 selections</span>
+            </div>
+            <div id="experienceChart" class="chart"></div>
+          </article>
+        </section>
+      </div>
+
+      <!-- ── PLAN STAGE PANEL ── -->
+      <div class="journey-stage-panel" id="stagePlan" hidden>
+        <div class="stage-kpi-row">
+          <div class="stage-kpi"><div class="stage-kpi-label">Q2 · Plan stage (Q2=3 or 4)</div><div class="stage-kpi-val" id="skpiPlanPct">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q6 · Avg booking window</div><div class="stage-kpi-val" id="skpiBookingWindow">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q6a · Travel in 1–3 months</div><div class="stage-kpi-val" id="skpiTravelTiming">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q9 · Top decision driver</div><div class="stage-kpi-val" id="skpiTopDriver">—</div></div>
+        </div>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q2 · PLANNING STAGE</span><h2>Traveller planning stage</h2></div>
+              <span class="mini-note" id="planningInsight"></span>
+            </div>
+            <div id="planningChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><span class="section-tag">Q6a · TRAVEL TIMING</span><h2>When will they travel?</h2></div></div>
+            <div id="timingChart" class="chart"></div>
+          </article>
+        </section>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q9 · KEY TRIP CONSIDERATIONS</span><h2>Key trip considerations — Top 3</h2></div>
+              <span class="mini-note">All choices · descending · click to filter</span>
+            </div>
+            <div id="decisionChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><span class="section-tag">Q6 · BOOKING WINDOW</span><h2>How far ahead do they plan?</h2></div></div>
+            <div id="leadTimeChart" class="chart"></div>
+          </article>
+        </section>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q5 · TRAVEL COMPANIONS</span><h2>Who are they travelling with?</h2></div>
+            </div>
+            <div id="companionChart" class="chart donut-wrap"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><span class="section-tag">Q4 · TRIP DURATION</span><h2>How many nights?</h2></div></div>
+            <div id="tripNightsChart" class="chart"></div>
+          </article>
+        </section>
+      </div>
+
+      <!-- ── BOOK STAGE PANEL ── -->
+      <div class="journey-stage-panel" id="stageBook" hidden>
+        <div class="stage-kpi-row">
+          <div class="stage-kpi"><div class="stage-kpi-label">Q2 · Book stage (Q2=5)</div><div class="stage-kpi-val" id="skpiBookPct">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q10 · Spend will increase</div><div class="stage-kpi-val" id="skpiSpendInc">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q8 · Top booking channel</div><div class="stage-kpi-val" id="skpiTopBookCh">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q8b · Package preference</div><div class="stage-kpi-val" id="skpiPkgType">—</div></div>
+        </div>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q8 · BOOKING CHANNELS</span><h2>Preferred booking channels</h2></div>
+              <span class="mini-note">All channels · descending · click to filter</span>
+            </div>
+            <div id="bookingChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><span class="section-tag">Q8b · PACKAGE TYPE</span><h2>How are bookings made?</h2></div></div>
+            <div id="packageTypeChart" class="chart donut-wrap"></div>
+          </article>
+        </section>
+        <section class="grid two">
+          <article class="card">
+            <div class="card-head">
+              <div><span class="section-tag">Q10 · BUDGET CHANGE</span><h2>Expected travel spend change</h2></div>
+            </div>
+            <div id="spendChart" class="chart"></div>
+          </article>
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q8a · BOOKING SEQUENCE</span><h2>What do travellers book first?</h2></div>
+              <span class="mini-note">Bar = first-booked % · orange line = avg rank</span>
+            </div>
+            <div id="bookingSeqChart" class="chart"></div>
+          </article>
+        </section>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q11a · SPEND MANAGEMENT (INCREASE)</span><h2>How are travellers managing increased spend?</h2></div>
+              <span class="mini-note">Those who plan to increase · multi-select</span>
+            </div>
+            <div id="spendIncreaseChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <div><span class="section-tag">Q11 · SPEND MANAGEMENT (DECREASE)</span><h2>How are travellers managing reduced spend?</h2></div>
+              <span class="mini-note">Those who plan to decrease · multi-select</span>
+            </div>
+            <div id="spendDecreaseChart" class="chart"></div>
+          </article>
+        </section>
+      </div>
+
+      <!-- ── ON-TRIP STAGE PANEL ── -->
+      <div class="journey-stage-panel" id="stageOnTrip" hidden>
+        <div class="stage-kpi-row">
+          <div class="stage-kpi"><div class="stage-kpi-label">Q9b · AI adoption (Top 2 box)</div><div class="stage-kpi-val" id="skpiAiAdopt">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q9a · Top on-site activity</div><div class="stage-kpi-val" id="skpiTopActivity">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q4 · Avg trip duration</div><div class="stage-kpi-val" id="skpiAvgNights">—</div></div>
+          <div class="stage-kpi"><div class="stage-kpi-label">Q9c · Top AI task</div><div class="stage-kpi-val" id="skpiTopAiTask">—</div></div>
+        </div>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q9a · ON-SITE BOOKINGS &amp; ACTIVITIES</span><h2>What are they planning to do there?</h2></div>
+              <span class="mini-note">Multi-select</span>
+            </div>
+            <div id="destExpChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><span class="section-tag">Q9b · AI ADOPTION ON TRIP</span><h2>Likelihood to use an AI trip assistant</h2></div></div>
+            <div id="aiGauge" class="chart gauge-wrap"></div>
+          </article>
+        </section>
+        <section class="grid two">
+          <article class="card wide">
+            <div class="card-head">
+              <div><span class="section-tag">Q9c · AI TASKS</span><h2>AI tasks users would be comfortable with</h2></div>
+              <span class="mini-note">All choices · descending · click to filter</span>
+            </div>
+            <div id="aiTasksChart" class="chart"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><span class="section-tag">Q5 · SOLO TRAVEL</span><h2>Who are they travelling with?</h2></div></div>
+            <div id="companionOnTripChart" class="chart donut-wrap"></div>
+          </article>
+        </section>
+      </div>
+
+      <!-- Tab question explorer -->
+      <section class="tab-question-section">
+        <div class="tab-question-head">
+          <div><span class="section-tag">QUESTION DETAIL</span><h2>Discovery, booking, AI &amp; spend questions</h2><p>All Travel Behaviour survey questions grouped by topic.</p></div>
+          <div class="question-jump" id="behaviourQuestionJump"></div>
+        </div>
+        <div class="tab-question-grid" id="behaviourQuestionGrid"></div>
+      </section>
+    </section>
+
+        <!-- ══════════════════════════════════════════
+         AIRLINE POV
+    ══════════════════════════════════════════ -->
+    <section class="tab-panel" data-panel="airline" hidden>
+      <div class="insight-banner">
+        <span class="insight-tag">Insight</span>
+        <span id="airlineInsight"></span>
+      </div>
+
+      <!-- 3D Globe -->
+      <section class="card airline-3d-card">
+        <div class="card-head airline-3d-head">
+          <div>
+            <span class="section-tag">AIRLINE POV · 3D GLOBAL INTELLIGENCE</span>
+            <h2>Global Airline &amp; Travel Movement</h2>
+            <p class="map-subtitle">Explore source markets → international destinations. Survey-derived travel intent, not live flight tracking.</p>
+          </div>
+          <div class="airline-route-filters" aria-label="Route filters">
+            <label>Source market<select id="airlineRouteSource"><option value="">All sources</option></select></label>
+            <label>Destination<select id="airlineRouteDestination"><option value="">All destinations</option></select></label>
+            <button type="button" class="map-control-btn" id="airlineRouteClear">Clear route filter</button>
+          </div>
+          <div class="airline-3d-actions">
+            <button type="button" class="map-mode-btn active" data-geo-mode="considered">Considered destinations</button>
+            <button type="button" class="map-mode-btn" data-geo-mode="selected">Selected / booked</button>
+            <button type="button" class="map-control-btn" id="airline3DReset">⌖ Reset</button>
+            <button type="button" class="map-control-btn" id="airline3DAutoRotate">⟳ Rotate</button>
+            <button type="button" class="map-control-btn" id="airline3DFullscreen">⛶ Fullscreen</button>
+          </div>
+        </div>
+        <div class="airline-3d-kpis" id="airline3DKpis"></div>
+        <div class="airline-top-flights" id="airlineTopFlights" aria-label="Top airline scores"></div>
+        <div class="airline-3d-shell">
+          <div id="airline3DMap" class="airline-3d-canvas" aria-label="3D global airline intelligence globe"></div>
+          <aside id="airline3DDetail" class="airline-3d-detail">
+            <div class="airline-3d-detail-empty">
+              <span class="detail-kicker">INTERACTIVE MAP</span>
+              <h3>Select a route, destination or airline</h3>
+              <p>Use the globe to drill from global view → country → city. Map selections sync with the dashboard filter state.</p>
+            </div>
+          </aside>
+        </div>
+        <div class="airline-3d-legend">
+          <span><i class="legend-dot market"></i> Source market</span>
+          <span><i class="legend-dot city"></i> City / destination</span>
+          <span><i class="legend-line"></i> Travel-intent route</span>
+          <span><i class="legend-dot airline"></i> Airline activity</span>
+          <span class="legend-note">Survey-derived · not live flight tracking</span>
+        </div>
+      </section>
+
+      <!-- 2D fallback map -->
+      <section class="grid map-row airline-2d-fallback-row">
+        <article class="card map-card wide">
+          <div class="card-head">
+            <div><span class="section-tag">2D FALLBACK · AIRLINE NPS MAP</span><h2>Airline NPS by source market</h2></div>
+            <span class="mini-note">Used automatically if WebGL is unavailable</span>
+          </div>
+          <div id="airlineMap" class="chart global-map"></div>
+        </article>
+        <article class="card map-insight">
+          <div class="card-head"><div><span class="section-tag">AIRLINE MARKET FOCUS</span><h2>Selected market</h2></div></div>
+          <div id="airlineMapInsight"></div>
+        </article>
+      </section>
+
+      <!-- Carrier + NPS -->
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">Q14 · PREFERRED CARRIER</span><h2>Preferred airline carrier</h2></div>
+            <span class="mini-note">All carriers · descending · click to filter</span>
+          </div>
+          <div id="carrierChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q15a · AIRLINE NPS</span><h2>Airline NPS</h2></div></div>
+          <div id="airlineNpsGauge" class="chart gauge-wrap"></div>
+        </article>
+      </section>
+      <section class="card pov-comparison-card">
+        <div class="card-head"><div><span class="section-tag">Q15a · AIRLINE COMPARISON</span><h2>Airline sentiment mix by carrier</h2></div><label class="chart-type-picker">View<select id="airlineSentimentMixType"><option value="grouped">Grouped bars</option><option value="stacked">Stacked bars</option><option value="pie">Pie</option><option value="line">Line</option></select></label></div>
+        <div id="airlineSentimentMix" class="chart"></div>
+      </section>
+
+      <!-- Considerations + cabin class -->
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head"><div><span class="section-tag">Q16 · BOOKING CONSIDERATIONS</span><h2>Key factors selecting an airline</h2></div></div>
+          <div id="airlineConsiderChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q15 · CABIN CLASS</span><h2>Preferred cabin class</h2></div></div>
+          <div id="cabinChart" class="chart donut-wrap"></div>
+        </article>
+      </section>
+
+      <!-- Loyalty importance + booking triggers -->
+      <section class="grid two">
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q16a · FFP IMPORTANCE</span><h2>Importance of a frequent-flyer program</h2></div></div>
+          <div id="airlineLoyaltyChart" class="chart donut-wrap"></div>
+        </article>
+        <article class="card wide">
+          <div class="card-head"><div><span class="section-tag">Q17 · BOOKING TRIGGERS</span><h2>What would drive an airline booking</h2></div></div>
+          <div id="airlineStrategyChart" class="chart"></div>
+        </article>
+      </section>
+
+      <!-- Loyalty features -->
+      <section class="grid">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">Q16b · LOYALTY PROGRAMME FEATURES</span><h2>Most valued airline loyalty programme features</h2></div>
+            <span class="mini-note">Multi-select · descending</span>
+          </div>
+          <div id="airlineLoyaltyFeatChart" class="chart"></div>
+        </article>
+      </section>
+
+      <!-- Tab question explorer -->
+      <section class="tab-question-section">
+        <div class="tab-question-head">
+          <div><span class="section-tag">QUESTION DETAIL</span><h2>Airline questions</h2><p>Carrier, cabin, NPS, considerations, loyalty, booking strategy and carrier-level matrix.</p></div>
+          <div class="question-jump" id="airlineQuestionJump"></div>
+        </div>
+        <div class="tab-question-grid" id="airlineQuestionGrid"></div>
+      </section>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         HOTEL POV
+    ══════════════════════════════════════════ -->
+    <section class="tab-panel" data-panel="hotel" hidden>
+      <div class="insight-banner">
+        <span class="insight-tag">Insight</span>
+        <span id="hotelInsight"></span>
+      </div>
+
+      <div class="hotel-kpis" id="hotelKpis" aria-label="Hotel brand NPS summary"></div>
+
+      <!-- Hotel map -->
+      <section class="grid map-row">
+        <article class="card map-card wide">
+          <div class="card-head">
+            <div><span class="section-tag">HOTEL POV · GLOBAL MAP</span><h2>Hotel NPS by source market</h2></div>
+            <span class="mini-note">Click a country to filter</span>
+          </div>
+          <div id="hotelMap" class="chart global-map"></div>
+        </article>
+        <article class="card map-insight">
+          <div class="card-head"><div><span class="section-tag">HOTEL MARKET FOCUS</span><h2>Selected market</h2></div></div>
+          <div id="hotelMapInsight"></div>
+        </article>
+      </section>
+
+      <!-- Stay type + hotel NPS -->
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head"><div><span class="section-tag">Q19 · ACCOMMODATION TYPE</span><h2>Preferred accommodation type</h2></div></div>
+          <div id="stayChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q21a · HOTEL NPS</span><h2>Hotel NPS</h2></div></div>
+          <div id="hotelNpsGauge" class="chart gauge-wrap"></div>
+        </article>
+      </section>
+
+      <!-- Considerations + loyalty importance -->
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head"><div><span class="section-tag">Q22 · BOOKING CONSIDERATIONS</span><h2>Key factors selecting a hotel</h2></div></div>
+          <div id="hotelConsiderChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q22a · LOYALTY IMPORTANCE</span><h2>Importance of a hotel loyalty program</h2></div></div>
+          <div id="hotelLoyaltyChart" class="chart donut-wrap"></div>
+        </article>
+      </section>
+
+      <!-- Booking triggers + loyalty features -->
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head"><div><span class="section-tag">Q23 · BOOKING TRIGGERS</span><h2>What would drive a hotel booking</h2></div></div>
+          <div id="hotelStrategyChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q22b · LOYALTY FEATURES</span><h2>Most valued loyalty features</h2></div></div>
+          <div id="hotelFeaturesChart" class="chart"></div>
+        </article>
+      </section>
+      <section class="card pov-comparison-card">
+        <div class="card-head"><div><span class="section-tag">Q21a · HOTEL COMPARISON</span><h2>Hotel sentiment mix by brand</h2></div><label class="chart-type-picker">View<select id="hotelSentimentMixType"><option value="grouped">Grouped bars</option><option value="stacked">Stacked bars</option><option value="pie">Pie</option><option value="line">Line</option></select></label></div>
+        <div id="hotelSentimentMix" class="chart"></div>
+      </section>
+
+      <!-- Hotel brand -->
+      <section class="grid">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">Q21 · HOTEL BRAND</span><h2>Preferred hotel / accommodation brand</h2></div>
+            <span class="mini-note">All brands · descending · click to filter</span>
+          </div>
+          <div id="hotelBrandChart" class="chart"></div>
+        </article>
+      </section>
+
+      <!-- Star rating + trip budget -->
+      <section class="grid two">
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q20 · STAR RATING</span><h2>Preferred hotel star rating</h2></div></div>
+          <div id="hotelStarChart" class="chart donut-wrap"></div>
+        </article>
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">Q10a · TRIP BUDGET</span><h2>Trip budget — USD normalised</h2></div>
+            <span class="mini-note">Converted to USD · outliers excluded</span>
+          </div>
+          <div id="budgetHistChart" class="chart"></div>
+        </article>
+      </section>
+
+      <!-- Tab question explorer -->
+      <section class="tab-question-section">
+        <div class="tab-question-head">
+          <div><span class="section-tag">QUESTION DETAIL</span><h2>Hotel questions</h2><p>Accommodation, class, brand, NPS, considerations, loyalty, booking strategy and brand-level matrix.</p></div>
+          <div class="question-jump" id="hotelQuestionJump"></div>
+        </div>
+        <div class="tab-question-grid" id="hotelQuestionGrid"></div>
+      </section>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         MARKET SNAPSHOT
+    ══════════════════════════════════════════ -->
+    <section class="tab-panel" data-panel="market" hidden>
+      <div class="insight-banner">
+        <span class="insight-tag">Insight</span>
+        <span id="marketInsight"></span>
+      </div>
+
+      <section class="market-profile" id="marketProfile"></section>
+      <section class="card market-benchmark-card">
+        <div class="card-head"><div><span class="section-tag">BENCHMARK VIEW</span><h2>Selected market vs. global benchmark</h2></div><span class="mini-note">Active filters · percentage-point comparison</span></div>
+        <div id="marketBenchmarkChart" class="chart"></div>
+      </section>
+
+      <section class="grid map-row">
+        <article class="card map-card wide">
+          <div class="card-head">
+            <div><span class="section-tag">GLOBAL MARKET SNAPSHOT</span><h2>Source-market footprint</h2></div>
+            <span class="mini-note">Filtered base · click market to filter</span>
+          </div>
+          <div id="marketMap" class="chart global-map"></div>
+        </article>
+        <article class="card map-insight">
+          <div class="card-head"><div><span class="section-tag">MARKET FOCUS</span><h2>Selected market</h2></div></div>
+          <div id="marketMapInsight"></div>
+        </article>
+      </section>
+
+      <p class="tab-intro">Cross-region comparisons. Regional values respect the other active filters, while the Market filter itself is excluded so you can compare regions fairly.</p>
+
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">SENTIMENT MAP · REGIONAL</span><h2>Airline NPS vs. Hotel NPS by region</h2></div>
+            <span class="mini-note">Bubble size = sample size</span>
+          </div>
+          <div id="regionScatter" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head">
+            <div><span class="section-tag">Q10 · SPEND OUTLOOK</span><h2>Spend expected to increase, by region</h2></div>
+            <span class="mini-note">Active filters · click region to filter</span>
+          </div>
+          <div id="regionSpendBar" class="chart"></div>
+        </article>
+      </section>
+
+      <section class="grid two">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">Q9b · AI ADOPTION BY AGE</span><h2>AI assistant adoption by age group</h2></div>
+            <span class="mini-note">Top-2-box · true respondent intersection · click age to filter</span>
+          </div>
+          <div id="ageLine" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head">
+            <div><span class="section-tag">Q2 · PLANNING STATUS</span><h2>Still researching, by region</h2></div>
+            <span class="mini-note">Active filters · click region to filter</span>
+          </div>
+          <div id="regionResearchBar" class="chart"></div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="card wide">
+          <div class="card-head">
+            <div><span class="section-tag">SEGMENT PROFILE</span><h2>Selected segment vs. global average</h2></div>
+            <span class="mini-note">5 KPIs, normalised 0–1 · hover points for values</span>
+          </div>
+          <div id="radarChart" class="chart radar-wrap"></div>
+        </article>
+      </section>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         DESTINATION POV
+    ══════════════════════════════════════════ -->
+    <section class="tab-panel" data-panel="destination" hidden>
+      <div class="insight-banner">
+        <span class="insight-tag">Insight</span>
+        <span id="destinationInsight"></span>
+      </div>
+      <section class="destination-kpis" id="destinationKpis"></section>
+      <section class="grid two destination-hero-grid">
+        <article class="card wide">
+          <div class="card-head"><div><span class="section-tag">Q3 · DESTINATION INTENT</span><h2>Top destinations considered</h2></div><span class="mini-note">Mentions · click a destination to filter</span></div>
+          <div id="destinationIntentChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="section-tag">Q3 / Q3a · INTENT PROFILE</span><h2>Destination planning status</h2></div></div>
+          <div id="destinationStatusChart" class="chart"></div>
+        </article>
+      </section>
+      <section class="card destination-reach-card">
+        <div class="card-head"><div><span class="section-tag">Q3 · DESTINATION REACH</span><h2>Destinations reaching the widest source-market audience</h2></div><span class="mini-note">Distinct source markets mentioning each destination</span></div>
+        <div id="destinationReachChart" class="chart"></div>
+      </section>
+      <section class="card destination-stage-card">
+        <div class="card-head"><div><span class="section-tag">Q2 · DESTINATION READINESS</span><h2>Planning-stage mix by top destination</h2></div><label class="chart-type-picker">View<select id="destinationStageMixType"><option value="grouped">Grouped bars</option><option value="stacked">Stacked bars</option><option value="pie">Pie</option><option value="line">Line</option></select></label></div>
+        <div id="destinationStageMix" class="chart"></div>
+      </section>
+      <section class="card destination-market-card">
+        <div class="card-head"><div><span class="section-tag">SOURCE MARKET VIEW</span><h2>Destination intent by source market</h2></div><span class="mini-note">Active filters · top destination mentions</span></div>
+        <div id="destinationMarketTable" class="destination-market-table"></div>
+      </section>
+    </section>
+
+    <section class="tab-panel" data-panel="social" hidden>
+      <div class="insight-banner"><span class="insight-tag">Brandwatch</span><span id="socialInsight"></span></div>
+      <section class="social-toolbar card">
+        <div class="card-head"><div><span class="section-tag">SOCIAL LISTENING · BRANDWATCH</span><h2>Travel sentiment across the journey</h2></div><span class="mini-note">Wave 2 = survey-aligned social context · all waves available</span></div>
+        <div class="social-wave-filter"><label for="socialWaveSelect">Wave</label><select id="socialWaveSelect"><option value="all">All waves</option><option value="Wave 1">Wave 1</option><option value="Wave 2">Wave 2</option><option value="Wave 3">Wave 3</option><option value="Wave 4">Wave 4</option></select></div>
+        <div id="socialKpis" class="social-kpis"></div>
+      </section>
+      <section class="grid two">
+        <article class="card"><div class="card-head"><div><span class="section-tag">SENTIMENT</span><h2>Positive, neutral, negative</h2></div></div><div id="socialSentimentChart" class="chart"></div></article>
+        <article class="card"><div class="card-head"><div><span class="section-tag">TREND</span><h2>Sentiment by wave</h2></div></div><div id="socialWaveChart" class="chart"></div></article>
+      </section>
+      <section class="grid two">
+        <article class="card"><div class="card-head"><div><span class="section-tag">KEY THEMES</span><h2>What travelers discuss</h2></div></div><div id="socialThemeChart" class="chart"></div></article>
+        <article class="card"><div class="card-head"><div><span class="section-tag">DESTINATIONS</span><h2>Social destination mentions</h2></div></div><div id="socialDestinationChart" class="chart"></div></article>
+      </section>
+      <section class="card"><div class="card-head"><div><span class="section-tag">SOURCE MARKETS</span><h2>Where discussion comes from</h2></div></div><div id="socialMarketChart" class="chart"></div></section>
+      <p class="social-method-note">Social sentiment is Brandwatch-derived and separate from survey NPS. Wave 2 contains 5,353 records and is the closest social comparison for the Wave 2 survey.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ALL SURVEY QUESTIONS
+    ══════════════════════════════════════════ -->
+    <section class="tab-panel" data-panel="all" hidden>
+      <div class="insight-banner">
+        <span class="insight-tag">Complete Survey</span>
+        <span id="surveyAllInsight">Every main survey question available in the source data is represented below. Long answer sets and matrix questions use internal scrolling.</span>
+      </div>
+      <div class="survey-toolbar">
+        <div>
+          <span class="section-tag">Q2–Q24 FULL COVERAGE</span>
+          <h2>All survey questions and answer distributions</h2>
+        </div>
+        <span class="mini-note" id="surveyBaseNote">Filtered respondent base</span>
+      </div>
+      <div id="surveyQuestionGrid" class="survey-question-grid"></div>
+    </section>
+
+    <footer>Travel Pulse 2nd Wave · Executive Dashboard · Built with D3.js &amp; Globe.gl · © 2026 Escalent, Inc. — Confidential</footer>
+  </main>
+
+  <div id="tooltip" class="tooltip"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.2/dist/globe.gl.min.js"></script>
+  <script src="app-final.js?v=1789063067"></script>
+  <script src="smart-filters.js?v=1789063063"></script>
+  <script src="enhancement.js?v=1789063069"></script>
+  <script src="airline-3d-map.js?v=20260922"></script>
+</body>
+</html>

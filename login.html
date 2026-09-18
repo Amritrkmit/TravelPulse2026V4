@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Pulse | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-card" aria-labelledby="loginTitle">
+      <div class="login-brand">
+        <div class="login-mark">TP</div>
+        <div>
+          <strong>Travel Pulse</strong>
+          <span>2nd Wave · 2026</span>
+        </div>
+      </div>
+
+      <div class="login-heading">
+        <span class="section-tag">SECURE ACCESS</span>
+        <h1 id="loginTitle">Welcome back</h1>
+        <p>Sign in to access the Travel Pulse executive dashboard.</p>
+      </div>
+
+      <form id="loginForm" autocomplete="on">
+        <label class="login-label" for="username">Username</label>
+        <input class="login-input" id="username" name="username" type="text"
+               placeholder="Enter username" autocomplete="username" required />
+
+        <label class="login-label" for="password">Password</label>
+        <div class="password-wrap">
+          <input class="login-input" id="password" name="password" type="password"
+                 placeholder="Enter password" autocomplete="current-password" required />
+          <button class="password-toggle" id="togglePassword" type="button" aria-label="Show password">Show</button>
+        </div>
+
+        <div class="login-error" id="loginError" role="alert" aria-live="polite"></div>
+
+        <button class="login-submit" type="submit">Sign in <span>→</span></button>
+      </form>
+
+      <div class="login-footer">
+        <span>Protected dashboard</span>
+        <span>Travel Pulse · Overall</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Change these two values to your preferred credentials.
+    const VALID_USERNAME = "admin";
+    const VALID_PASSWORD = "TravelPulse2026";
+
+    if (sessionStorage.getItem("travelPulseAuth") === "1") {
+      window.location.replace("index.html");
+    }
+
+    const form = document.getElementById("loginForm");
+    const error = document.getElementById("loginError");
+    const password = document.getElementById("password");
+    const toggle = document.getElementById("togglePassword");
+
+    toggle.addEventListener("click", () => {
+      const visible = password.type === "text";
+      password.type = visible ? "password" : "text";
+      toggle.textContent = visible ? "Show" : "Hide";
+      toggle.setAttribute("aria-label", visible ? "Show password" : "Hide password");
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const pass = password.value;
+
+      if (username === VALID_USERNAME && pass === VALID_PASSWORD) {
+        sessionStorage.setItem("travelPulseAuth", "1");
+        window.location.replace("index.html");
+      } else {
+        error.textContent = "Invalid username or password. Please try again.";
+        password.focus();
+      }
+    });
+  </script>
+</body>
+</html>
